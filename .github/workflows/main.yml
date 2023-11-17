@@ -1,0 +1,22 @@
+name: Run Test
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name if needed
+  pull_request:
+    branches:
+      - main  # Change this to your main branch name if needed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run the test script
+      run: |
+        chmod +x test.sh
+        ./test.sh
